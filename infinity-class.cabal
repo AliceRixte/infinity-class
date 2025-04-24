@@ -7,7 +7,7 @@ cabal-version: 1.12
 name:           infinity-class
 version:        0.0.0
 synopsis:       A typeclass for types that can represent infinity.
-description:    Please see the README on GitHub at <https://github.com/AliceRixte/pandia/blob/main/infinity-class#readme>
+description:    Please see the README on GitHub at <https://github.com/AliceRixte/infinity-class/blob/main/infinity-class#readme>
 category:       numeric
 homepage:       https://github.com/AliceRixte/pandia#readme
 bug-reports:    https://github.com/AliceRixte/pandia/issues
