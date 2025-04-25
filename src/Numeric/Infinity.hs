@@ -14,6 +14,7 @@ module Numeric.Infinity
   ( Infinity(..)
   , isFinite
   , isInfinite
+  , toRational'
   )
   where
 
@@ -113,12 +114,12 @@ instance Infinity (f (g a)) => Infinity (Compose f g a) where
 
 -- | Is the value finite?
 --
-isFinite :: (Infinity a, Ord a) => a -> Bool
+isFinite :: Infinity a => a -> Bool
 isFinite = not . isInfinite
 
 -- | Is the value infinite?
 --
-isInfinite :: (Infinity a, Ord a) => a -> Bool
+isInfinite :: Infinity a => a -> Bool
 isInfinite x = x == infinity || x == -infinity
 
 -- | A version of 'toRational' that properly handles infinity.
