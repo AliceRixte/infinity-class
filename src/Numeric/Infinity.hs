@@ -26,8 +26,6 @@ import Data.Functor.Compose
 import Data.Ratio
 import Foreign.C.Types
 
-
-
 -- | A typeclass for types that can represent infinity.
 --
 -- Being an instance of this class breaks the @'Num'@ laws.
@@ -38,12 +36,12 @@ import Foreign.C.Types
 --
 -- Instances of this class must satisfy the following laws :
 --
--- [Ord :]
---
 --  * @a < 'infinity'@ for all @a /= infinity@
---  * @a > -'infinity'@ for all @a /= -infinity@
 --
 -- [Num :]
+-- If @'Num' a@ holds, instances must satisfy the following law :
+--
+-- * @a > -'infinity'@ for all @a /= -infinity@
 --
 -- * Addition :
 --
@@ -71,7 +69,7 @@ import Foreign.C.Types
 --     * 'signum' @ 'infinity' == 1@
 --     * 'signum' @ (-'infinity') == -1@
 --
-class (Num a, Ord a) => Infinity a where
+class Ord a => Infinity a where
   -- | A value representing infinity.
   infinity :: a
 
@@ -114,12 +112,12 @@ instance Infinity (f (g a)) => Infinity (Compose f g a) where
 
 -- | Is the value finite?
 --
-isFinite :: Infinity a => a -> Bool
+isFinite :: (Num a, Infinity a) => a -> Bool
 isFinite = not . isInfinite
 
 -- | Is the value infinite?
 --
-isInfinite :: Infinity a => a -> Bool
+isInfinite :: (Num a, Infinity a) => a -> Bool
 isInfinite x = x == infinity || x == -infinity
 
 -- | A version of 'toRational' that properly handles infinity.
