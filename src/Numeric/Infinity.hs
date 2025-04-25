@@ -116,3 +116,16 @@ isFinite = not . isInfinite
 
 isInfinite :: (Infinity a, Ord a) => a -> Bool
 isInfinite x = x == infinity || x == -infinity
+
+-- | A version of 'toRational' that properly handles infinity.
+--
+-- As of April 15th 2025, @2 ^ 1024 % 1 == toRational (1 / 0 :: Double)@. For
+-- this reason we need to handle infinity values as a special case.
+--
+-- See this stack overflow question for more details:
+-- https://stackoverflow.com/questions/79574823/in-haskell-why-torational-1-0-infinity-is-false
+toRational' :: (Infinity a, Real a) => a -> Rational
+toRational' a
+  | a == infinity = infinity
+  | a == -infinity = -infinity
+  | otherwise = toRational a
