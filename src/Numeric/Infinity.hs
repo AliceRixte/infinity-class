@@ -78,39 +78,30 @@ class Ord a => Infinity a where
 
 instance Integral a => Infinity (Ratio a) where
   infinity = 1 % 0
-  {-# INLINE infinity #-}
 
 instance Infinity Float where
   infinity = 1 / 0
-  {-# INLINE infinity #-}
 
 instance Infinity Double where
   infinity = 1 / 0
-  {-# INLINE infinity #-}
 
 instance Infinity CFloat where
   infinity = 1 / 0
-  {-# INLINE infinity #-}
 
 instance Infinity CDouble where
   infinity = 1 / 0
-  {-# INLINE infinity #-}
 
 instance Infinity a => Infinity (Identity a) where
   infinity = Identity infinity
-  {-# INLINE infinity #-}
 
 instance Infinity a => Infinity (Const a b) where
   infinity = Const infinity
-  {-# INLINE infinity #-}
 
 instance Infinity a => Infinity (Down a) where
   infinity = Down infinity
-  {-# INLINE infinity #-}
 
 instance Infinity (f (g a)) => Infinity (Compose f g a) where
   infinity = Compose infinity
-  {-# INLINE infinity #-}
 
 -- | Is the value finite?
 --
