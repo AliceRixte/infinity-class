@@ -111,9 +111,13 @@ instance Infinity (f (g a)) => Infinity (Compose f g a) where
   infinity = Compose infinity
   {-# INLINE infinity #-}
 
+-- | Is the value finite?
+--
 isFinite :: (Infinity a, Ord a) => a -> Bool
 isFinite = not . isInfinite
 
+-- | Is the value infinite?
+--
 isInfinite :: (Infinity a, Ord a) => a -> Bool
 isInfinite x = x == infinity || x == -infinity
 
