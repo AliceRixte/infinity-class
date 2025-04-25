@@ -26,6 +26,8 @@ import Data.Functor.Compose
 import Data.Ratio
 import Foreign.C.Types
 
+import Data.Bounded.Orphans ()
+
 -- | A typeclass for types that can represent infinity.
 --
 -- Being an instance of this class breaks the @'Num'@ laws.

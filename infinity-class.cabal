@@ -30,6 +30,7 @@ source-repository head
 
 library
   exposed-modules:
+      Data.Bounded.Orphans
       Numeric.Infinity
   other-modules:
       Paths_infinity_class
