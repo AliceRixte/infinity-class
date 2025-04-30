@@ -7,10 +7,10 @@ cabal-version: 1.12
 name:           infinity-class
 version:        0.0.0
 synopsis:       A typeclass for types that can represent infinity.
-description:    Please see the README on GitHub at <https://github.com/AliceRixte/infinity-class/blob/main/infinity-class#readme>
+description:    Please see the README on GitHub at <https://github.com/AliceRixte/infinity-class/blob/main/README.md>
 category:       numeric
-homepage:       https://github.com/AliceRixte/pandia#readme
-bug-reports:    https://github.com/AliceRixte/pandia/issues
+homepage:       https://github.com/AliceRixte/infinity-class#readme
+bug-reports:    https://github.com/AliceRixte/infinity-class/issues
 author:         Alice Rixte
 maintainer:     alice.rixte@u-bordeaux.fr
 copyright:      BSD3
@@ -25,8 +25,7 @@ extra-source-files:
 
 source-repository head
   type: git
-  location: https://github.com/AliceRixte/pandia
-  subdir: infinity-class
+  location: https://github.com/AliceRixte/infinity-class
 
 library
   exposed-modules:
