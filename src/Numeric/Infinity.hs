@@ -38,7 +38,12 @@ import Data.Bounded.Orphans ()
 --
 -- Instances of this class must satisfy the following laws :
 --
---  * @a < 'infinity'@ for all @a /= infinity@
+-- * @a < 'infinity'@ for all @a /= infinity@
+--
+-- [Bounded : ]
+--
+-- * @-'infinity'  == @ 'minBound'
+-- * 'infinity' @ == 'maxBound'@
 --
 -- [Num :]
 -- If @'Num' a@ holds, instances must satisfy the following law :
@@ -71,7 +76,7 @@ import Data.Bounded.Orphans ()
 --     * 'signum' @ 'infinity' == 1@
 --     * 'signum' @ (-'infinity') == -1@
 --
-class Ord a => Infinity a where
+class (Ord a, Bounded a) => Infinity a where
   -- | A value representing infinity.
   infinity :: a
 
