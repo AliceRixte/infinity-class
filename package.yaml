@@ -15,7 +15,7 @@ category:            numeric
 description:         Please see the README on GitHub at <https://github.com/AliceRixte/infinity-class/blob/main/README.md>
 
 dependencies:
-- base >= 4.14 && < 5
+- base >= 4.19 && < 5
 
 ghc-options:
   - -Wall
