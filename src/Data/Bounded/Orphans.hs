@@ -23,6 +23,7 @@ module Data.Bounded.Orphans
 
 import Foreign.C.Types
 import Data.Ratio
+import GHC.Real (Ratio ((:%)))
 
 instance Bounded Float where
   minBound = -1/0
@@ -41,5 +42,5 @@ instance Bounded CDouble where
   maxBound = 1/0
 
 instance Integral a => Bounded (Ratio a) where
-  minBound = -1 % 0
-  maxBound = 1 % 0
+  minBound = -1 :% 0
+  maxBound = 1 :% 0

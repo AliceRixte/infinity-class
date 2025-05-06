@@ -24,6 +24,7 @@ import Data.Functor.Identity
 import Data.Functor.Const
 import Data.Functor.Compose
 import Data.Ratio
+import GHC.Real (Ratio ((:%)))
 import Foreign.C.Types
 
 import Data.Bounded.Orphans ()
@@ -82,7 +83,7 @@ class (Ord a, Bounded a) => Infinity a where
 
 
 instance Integral a => Infinity (Ratio a) where
-  infinity = 1 % 0
+  infinity = 1 :% 0
 
 instance Infinity Float where
   infinity = 1 / 0
