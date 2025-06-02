@@ -103,9 +103,6 @@ instance Infinity a => Infinity (Identity a) where
 instance Infinity a => Infinity (Const a b) where
   infinity = Const infinity
 
-instance Infinity a => Infinity (Down a) where
-  infinity = Down infinity
-
 instance Infinity (f (g a)) => Infinity (Compose f g a) where
   infinity = Compose infinity
 
