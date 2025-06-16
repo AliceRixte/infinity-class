@@ -19,7 +19,6 @@ module Numeric.Infinity
   where
 
 import Prelude hiding (isInfinite)
-import Data.Ord
 import Data.Functor.Identity
 import Data.Functor.Const
 import Data.Functor.Compose
